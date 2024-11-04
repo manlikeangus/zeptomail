@@ -1,15 +1,11 @@
-# Zoho ZeptoMail API PHP Client (formerly TransMail) 
+# Zoho ZeptoMail API PHP Client
 
 Generic PHP API Client for Zoho's ZeptoMail service
 
-This unofficial ZeptoMail/Transmail PHP library allows you to easily send transactional email messages via the [Zoho ZeptoMail API](https://www.zoho.com/zeptomail/). 
+This unofficial ZeptoMail PHP library allows you to easily send transactional email messages via the [Zoho ZeptoMail API](https://www.zoho.com/zeptomail/). 
 
 The ZeptoMail system is intended for transactional emails related to website and app interactions (receipts, password resets, 2FA notices, etc.), not bulk sending of emails like newsletters and announcements. 
 Please see the [ZeptoMail site](https://www.zoho.com/zeptomail/) for details about use cases and guidelines.
-
-## Developer Note
-
-This library was created when this service was called Transmail. Other than the name on the Zoho documentation and a new API endpoint, the API is identical as before and as of this writing in August 2021 it continues to work even with the old Transmail endpoint. At some point in the future, I plan to update this library to reflect the new branding. Until then, it will continue to be used and namespaced as "transmail"
 
 ## Installation
 
@@ -37,8 +33,8 @@ Before you can connect to the API, you'll need two settings from your ZeptoMail 
 If you are using an environment file, you'll want to create settings with these setting:
 
 ```
-transmailkey = "MyAPIkeyfromZeptoMail"
-transbounceaddr = "bounce@bounce.mydomain.com"
+zeptomailkey = "MyAPIkeyfromZeptoMail"
+zeptobounceaddr = "bounce@bounce.mydomain.com"
 ```
 
 If you aren't using environment variables in your application, you can omit this step and pass these settings directly to the mailer (see full example below).
@@ -47,7 +43,7 @@ To load the library in your page or app, you'll need to include the file:
 
 ```PHP 
 // doing your own loading:
-include_once ("./transmail/TransmailClient.php");
+include_once ("./zeptomail/ZeptoMailClient.php");
 
 // or if using composer autoloading: 
 include_once ('./vendor/autoload.php'); 
@@ -72,7 +68,7 @@ $msg->to = array('joe@customer.com','Joe Customer'); //TO
 $msg->from = array('support@site.com','XYZ Company'); //FROM
 
 //instantiate library and pass info
-$tmail = new \Transmail\TransmailClient($msg);
+$tmail = new \ZeptoMail\ZeptoMailClient($msg);
 
 //send the message
 $response = $tmail->send();
@@ -125,7 +121,7 @@ Below are ALL the possible options, including manually setting an authorization 
 	$msg->inline_images = NULL; //INLINE IMAGES (array)
 	
 	//instantiate library and pass all possible settings
-	$tmail = new \Transmail\TransmailClient($msg, "myapikey", "mybounce@address.com", TRUE);
+	$tmail = new \ZeptoMail\ZeptoMailClient($msg, "myapikey", "mybounce@address.com", TRUE);
 	
 	//send the message
 	$response = $tmail->send();
