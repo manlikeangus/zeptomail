@@ -21,7 +21,6 @@ Or if you're adding this library to an application, in your composer.json file
 "require": {
     "manlikeangus/zeptomail": "dev-master"
 }
-
 ```
 
 Alternately, you can simply [clone this repository](https://github.com/manlikeangus/zeptomail.git) directly to include the source code in your project.
@@ -47,7 +46,6 @@ include_once ("./zeptomail/ZeptoMailClient.php");
 
 // or if using composer autoloading: 
 include_once ('./vendor/autoload.php'); 
-
 ```
 
 Note: Your ability to send messages also requires that the sender's domain is pre-verified in your ZeptoMail dashboard. Without that, you will see authentication errors.
@@ -56,7 +54,6 @@ Note: Your ability to send messages also requires that the sender's domain is pr
 ## Basic Mailing Example:
 
 ```PHP 
-
 //create a new message object
 $msg = new \stdClass();
 
