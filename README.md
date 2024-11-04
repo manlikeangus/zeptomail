@@ -19,7 +19,7 @@ Or if you're adding this library to an application, in your composer.json file
 
 ```
 "require": {
-    "manlikeangus/zeptomail": "dev-master"
+    "manlikeangus/zeptomail": "^1.0"
 }
 ```
 
