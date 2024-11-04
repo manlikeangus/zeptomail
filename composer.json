@@ -1,5 +1,5 @@
 {
-    "name": "angusokereafor/zeptomail",
+    "name": "manlikeangus/zeptomail",
     "type": "library",
     "description": "ZeptoMail Email Client Library for PHP",
     "keywords": ["zoho", "email", "deliverability", "transmail"],
