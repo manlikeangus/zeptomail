@@ -2,7 +2,7 @@
     "name": "manlikeangus/zeptomail",
     "type": "library",
     "description": "ZeptoMail Email Client Library for PHP",
-    "keywords": ["zoho", "email", "deliverability", "transmail"],
+    "keywords": ["zoho", "email", "transactional", "zeptomail"],
     "homepage": "https://www.zoho.com/zeptomail/",
     "license": "MIT",
     "authors": [
