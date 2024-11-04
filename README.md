@@ -19,8 +19,8 @@ Or if you're adding this library to an application, in your composer.json file
 
 ```
 "require": {
-	"manlikeangus/zeptomail": "dev-master"
-},
+    "manlikeangus/zeptomail": "dev-master"
+}
 
 ```
 
@@ -73,15 +73,12 @@ $tmail = new \ZeptoMail\ZeptoMailClient($msg);
 //send the message
 $response = $tmail->send();
 
-if ($response)
-{
-// success
+if ($response) {
+    // success
 } 
-else 
-{
-// failure
+else  {
+    // failure
 }
-
 ```
 
 Note: You can pass all email addresses either as a string or as an array, like this:
@@ -98,7 +95,6 @@ If using an array, the formatter will look for the email address in either the f
 Below are ALL the possible options, including manually setting an authorization key and bounce address:
 
 ```PHP 
-
 	//create a new message object
 	$msg = new \stdClass();
 	
@@ -126,15 +122,12 @@ Below are ALL the possible options, including manually setting an authorization 
 	//send the message
 	$response = $tmail->send();
 			
-	if ($response)
-	{
-		// success
-	} 
-	else 
-	{
-		// failure
-	}
-
+	if ($response) {
+            // success
+        } 
+	else {
+            // failure
+        }
 ```
 
 ## Error Handling
@@ -158,12 +151,8 @@ In the event of API success or failure, a JSON object with the entire API respon
 Passing additional headers to the email server is possible. Simply create any name-value pairs you want as an array and pass that to the function
 
 ```PHP 
-
 $headers = array();
-
-$headers[] = array( "CustId"   => "1234",
-		    "CustName" => "Bob Smith" );
-
+$headers[] = array( "CustId" => "1234", "CustName" => "Bob Smith" );
 ```
 
 ## Sending Attachments
@@ -171,24 +160,16 @@ $headers[] = array( "CustId"   => "1234",
 Sending attachments means loading the file into PHP's memory, converting to a Base64-encoded stream and then passing that to the function. Since there are three parameters needed by ZeptoMail, it is generally advised to first set up the attachments as an array and then pass that to the function:
 
 ```PHP 
-
 $attachments = array();
 
 $file = "filename.jpg";
 $path = "/path/to/" . $file;
 $filedata = file_get_contents($path);
 
-if ($filedata) 
-{
-
-$base64 = base64_encode($filedata);
-
-$attachments[] = array( "content"   => $base64,
-			"mime_type" => mime_content_type($path),
-			"name"      => $file );
-
+if ($filedata) {
+    $base64 = base64_encode($filedata);
+    $attachments[] = array( "content" => $base64, "mime_type" => mime_content_type($path), "name" => $file );
 }
-
 ```
 
 [List of unsupported attachments](https://www.zoho.com/zeptomail/help/file-cache.html#alink-un-sup-for)
