@@ -1,16 +1,13 @@
 <?php
-namespace Transmail;
+namespace ZeptoMail;
 
 /**
- * Note: This library was created when this service was called Transmail
- * Other than updating some wording for the new ZeptoMail branding 
- * and the new API endpoint, it remails largely unchanged
  * 
  * 
-ZeptoMail / TransMail Sending Example:
+ZeptoMail Sending Example:
 
 	//include file if not using autoloader
-	include_once ("./transmail/TransmailClient.php");
+	include_once ("./zeptomail/ZeptoMailClient.php");
 	
 	//create a new message object
 	$msg = new \stdClass();
@@ -34,7 +31,7 @@ ZeptoMail / TransMail Sending Example:
 	$msg->inline_images = NULL; //INLINE IMAGES (array)
 	
 	//instantiate library and pass info
-	$tmail = new \Transmail\TransmailClient($msg, "myapikey", "mybounce@address.com", TRUE);
+	$tmail = new \ZeptoMail\ZeptoMailClient($msg, "myapikey", "mybounce@address.com", TRUE);
 	
 	//send the message
 	$response = $tmail->send();
@@ -50,7 +47,7 @@ ZeptoMail / TransMail Sending Example:
 	
  */
 
-class TransmailClient{
+class ZeptoMailClient{
 	
 	//defaults
 	public $data = array();
@@ -62,11 +59,11 @@ class TransmailClient{
 		//connection settings
 		if ($key){
 			$this->key = $key;
-		} elseif (getenv('transmailkey')){
-			$this->key = getenv('transmailkey');
+		} elseif (getenv('zeptomailkey')){
+			$this->key = getenv('zeptomailkey');
 		} else {
 			if ($verbose){
-				return "ERROR: No TransMail API Key found";
+				return "ERROR: No ZeptoMail API Key found";
 			} else {
 				return FALSE;
 			}
@@ -74,11 +71,11 @@ class TransmailClient{
 		
 		if ($bounce){
 			$this->data['bounce_address'] = $bounce;
-		} elseif (getenv('transbounceaddr')){
-			$this->data['bounce_address'] = getenv('transbounceaddr');
+		} elseif (getenv('zeptobounceaddr')){
+			$this->data['bounce_address'] = getenv('zeptobounceaddr');
 		} else {
 			if ($verbose){
-				return "ERROR: No TransMail bounce address provided";
+				return "ERROR: No ZeptoMail bounce address provided";
 			} else {
 				return FALSE;
 			}
