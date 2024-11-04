@@ -1,22 +1,28 @@
 {
-    "name": "desttools/transmail",
+    "name": "angusokereafor/zeptomail",
     "type": "library",
-    "description": "ZeptoMail / TransMail Email Client Library for PHP",
+    "description": "ZeptoMail Email Client Library for PHP",
     "keywords": ["zoho", "email", "deliverability", "transmail"],
     "homepage": "https://www.zoho.com/zeptomail/",
     "license": "MIT",
     "authors": [
-        {
+	{
             "name": "Destination Toolbox",
             "email": "james@destinationtoolbox.com",
             "homepage": "https://www.destinationtoolbox.com",
             "role": "Developer"
+        },
+        {
+            "name": "Angus",
+            "email": "me@angusokereafor.com",
+            "homepage": "https://www.angusokereafor.com",
+            "role": "Contributor"
         }
     ],
     "require": {
-        "php": ">=5.6.0"
+        "php": "^7.4 || ^8.0"
     },
-	"autoload": {
-		"files": ["TransmailClient.php"]
+    "autoload": {
+	"files": ["ZeptoMailClient.php"]
     }
 }
