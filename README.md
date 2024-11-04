@@ -9,22 +9,22 @@ Please see the [ZeptoMail site](https://www.zoho.com/zeptomail/) for details abo
 
 ## Installation
 
-For most uses we recommend installing the [desttools/transmail](https://packagist.org/packages/desttools/transmail) package via Composer. If you have [Composer](https://getcomposer.org) installed already, you can add the latest version of the package with the following command:
+For most uses we recommend installing the [manlikeangus/zeptomail](https://packagist.org/packages/manlikeangus/zeptomail) package via Composer. If you have [Composer](https://getcomposer.org) installed already, you can add the latest version of the package with the following command:
 
 ```
-composer require desttools/transmail
+composer require manlikeangus/zeptomail
 ```
 
 Or if you're adding this library to an application, in your composer.json file
 
 ```
 "require": {
-	"desttools/transmail": "dev-master"
+	"manlikeangus/zeptomail": "dev-master"
 },
 
 ```
 
-Alternately, you can simply [clone this repository](https://github.com/desttools/transmail.git) directly to include the source code in your project.
+Alternately, you can simply [clone this repository](https://github.com/manlikeangus/zeptomail.git) directly to include the source code in your project.
 
 ## Settings
 
